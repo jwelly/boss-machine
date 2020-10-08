@@ -48,7 +48,7 @@ const createIdea = () => {
   const name = companies[Math.floor(Math.random() * companies.length)];
   let weeklyRevenue = 0;
   let numWeeks = 0;
-  while (weeklyRevenue * numWeeks < 1000000) {
+  while (weeklyRevenue * numWeeks < 1000000) {    // this will loop until the product is > 1000000
     weeklyRevenue = Math.floor(Math.random() * 123562);
     numWeeks = Math.floor(Math.random() * 104) + 6;
   }
