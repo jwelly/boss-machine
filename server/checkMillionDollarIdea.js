@@ -1,9 +1,9 @@
 const checkMillionDollarIdea = (req, res, next) => {
     const { numWeeks, weeklyRevenue } = req.body;    // this is called destructuring! Not importing module
     // it means we don't have to do this: const numWeeks = req.body.numWeeks, const weeklyRevenue = ...
-    const totalMoney = Num(numWeeks) * Number(weeklyRevenue);
+    const totalMoney = Number(numWeeks) * Number(weeklyRevenue);
     if (!numWeeks || !weeklyRevenue || isNaN(totalMoney) || totalMoney < 1000000) {
-        res.status(404).send();
+        res.status(400).send();
     } else {
         next();
     }
